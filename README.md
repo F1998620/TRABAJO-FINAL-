@@ -1,1 +1,30 @@
 # TRABAJO-FINAL-PROGRAMACION JUEGO ADIVINA EL NUMERO.
+import random  # Importamos la librería para generar un número aleatorio
+
+# Paso 1: Generar el número secreto entre 1 y 20
+numero_secreto = random.randint(1, 20)
+
+# Paso 2: Inicializamos la variable para el intento del jugador
+intento = None
+
+# Paso 3: Bucle para que el jugador adivine el número
+while intento != numero_secreto:
+    # Paso 4: Pedimos al jugador que ingrese un número
+    entrada = input("Adivina el número (entre 1 y 20): ")
+
+    # Paso 5: Validamos si lo ingresado es un número
+    if not entrada.isdigit():
+        print(" Por favor, ingresa un número válido.")
+        continue  # Vuelve a pedir el número
+
+    intento = int(entrada)  # Convertimos la entrada en número entero
+
+    # Paso 6: Estructura condicional para comparar con el número secreto
+    if intento < 1 or intento > 20:
+        print(" El número debe estar entre 1 y 20.")
+    elif intento < numero_secreto:
+        print(" Muy bajo. Intenta un número más alto.")
+    elif intento > numero_secreto:
+        print(" Muy alto. Intenta un número más bajo.")
+    else:
+        print(f" ¡Felicidades! Adivinaste el número secreto: {numero_secreto}")
