@@ -28,3 +28,6 @@ while intento != numero_secreto:
         print(" Muy alto. Intenta un número más bajo.")
     else:
         print(f" ¡Felicidades! Adivinaste el número secreto: {numero_secreto}")
+
+
+
